@@ -8,6 +8,7 @@ function preload() {
 	game.load.image('begin', 'begin_button.png')
 	game.load.image('boulderBg', 'boulder_bg.png');
 	game.load.image('toBoulder', 'boulder_button.png');
+	game.load.image('boulderTiles', 'tiles.png');
 	game.load.image('debris', 'debris.png');
 	game.load.image('debrisSmash', 'debrisSmash.png');
 }
@@ -53,6 +54,7 @@ function startRope() {
 function startRescue() {
 	beginButton.destroy();
 	backButton.destroy();
+	boulderTiles = game.add.sprite(150, 0, 'boulderTiles');
 	var rescued = true;
 	var boulders = [0,1,2,3,4];
 	for (var i = 1; i <= 5; i++) {
