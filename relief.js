@@ -6,6 +6,8 @@ function preload() {
 	game.load.image('ropeBg', 'rope_bg.png');
 	game.load.image('back', 'back_button.png');
 	game.load.image('begin', 'begin_button.png')
+	game.load.image('rock', 'rock.png');
+	game.load.image('rockSmash', 'rockSmash.png');
 }
 
 function create() {
@@ -32,6 +34,12 @@ function endRope() {
 function startRope() {
 	beginButton.destroy();
 	backButton.destroy();
+}
+
+function startRescue() {
+	//destroy buttons
+
+
 }
 
 function update() {
