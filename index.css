@@ -3,6 +3,7 @@ body {
 }
 
 div {
+	border: 5px white;
 	width: 900px;
 	margin-left: auto;
 	margin-right: auto;
