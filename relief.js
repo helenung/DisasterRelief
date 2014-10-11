@@ -67,7 +67,8 @@ function startRescue() {
 		}
 	}
 
-	boulders[3][2] = game.add.sprite()
+	boulders[3][2].destroy();
+	boulders[3][2] = game.add.sprite(510, 250, 'debrisSmash');
 	// boulders[0][0] = game.add.sprite(150, 0, 'debris');
 	// boulders[2][0] = game.add.sprite(280, 0, 'debris');
 	// boulders[4][0] = game.add.sprite(410, 0, 'debris');
