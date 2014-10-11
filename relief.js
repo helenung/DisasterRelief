@@ -4,15 +4,24 @@ function preload() {
 	game.load.image('bg', 'bg.png');
 	game.load.image('toRope', 'rope_button.png');
 	game.load.image('ropeBg', 'rope_bg.png');
+	game.load.image('back', 'back_button.png')
 }
 
 function create() {
 	game.add.sprite(0, 0, 'bg');
-	var toRope = game.add.sprite(210, 250, 'toRope');
+	toRope = game.add.sprite(210, 250, 'toRope');
 	toRope.inputEnabled = true;
 	toRope.events.onInputUp.add(function() {
-		game.add.sprite(0, 0, 'ropeBg');
+		ropeScreen = game.add.sprite(0, 0, 'ropeBg');
+		backButton = game.add.sprite(800, 525, 'back');
+		backButton.inputEnabled = true;
+		backButton.events.onInputUp.add(toMenu);
 	});
+}
+
+function toMenu() {
+	ropeScreen.destroy();
+	backButton.destroy();
 }
 
 function update() {
