@@ -8,8 +8,8 @@ function preload() {
 	game.load.image('begin', 'begin_button.png')
 	game.load.image('boulderBg', 'boulder_bg.png');
 	game.load.image('toBoulder', 'boulder_button.png');
-	game.load.image('rock', 'rock.png');
-	game.load.image('rockSmash', 'rockSmash.png');
+	game.load.image('debris', 'debris.png');
+	game.load.image('debrisSmash', 'debrisSmash.png');
 }
 
 function create() {
@@ -51,7 +51,24 @@ function startRope() {
 }
 
 function startRescue() {
-	//destroy buttons
+	beginButton.destroy();
+	backButton.destroy();
+	var rescued = true;
+	var boulders = [0,1,2,3,4];
+	for (var i = 1; i <= 5; i++) {
+		boulders[i] = [0,1,2,3,4];
+	}
+
+	for (var i = 0; i < 5; i++) {
+		for (var j = 0; j < 5; j++) {
+			boulders[i][j] = game.add.sprite(150 + (i*120), 50 + (j*100), 'debris');
+		}
+	}
+
+	boulders[3][2] = game.add.sprite()
+	// boulders[0][0] = game.add.sprite(150, 0, 'debris');
+	// boulders[2][0] = game.add.sprite(280, 0, 'debris');
+	// boulders[4][0] = game.add.sprite(410, 0, 'debris');
 
 
 }
