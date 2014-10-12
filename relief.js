@@ -97,16 +97,22 @@ function startRescue() {
 	victim = game.add.sprite(630, 50, 'victim');
 }
 
+var unwalkableX = [];
+var unwalkableY = [];
 
 function checkSmash() {
-    // if (tiles[(heroX - 150) / 120][(heroY - 50) / 100]) {
-    // 	tiles[(heroX - 150) / 120][(heroY - 50) / 100].destroy();
-    // 	tiles[(heroX - 150) / 120][(heroY - 50) / 100] = games.add.sprite(heroX, heroY, 'debrisSmash');
-    // }
-
     if (heroX == 630 && heroY == 50) {
     	victim.destroy();
     	scoreUp(playerName, 1);
+    }
+
+     if (tiles[(heroX - 150) / 120][(heroY - 50) / 100]) {
+     	tiles[(heroX - 150) / 120][(heroY - 50) / 100].destroy();
+     	tiles[(heroX - 150) / 120][(heroY - 50) / 100] = game.add.sprite(heroX, heroY, 'debrisSmash');
+    }
+
+    if (heroX == 150 && heroY == 450) {
+    	victim = game.add.sprite(630, 50, 'victim');
     }
 }
 
@@ -116,26 +122,26 @@ function checkKey(e) {
     if (e.keyCode == '38' && heroY >= 100) {
         // up arrow
         heroY -= 100;
-        checkSmash();
         hero.destroy();
         hero = game.add.sprite(heroX, heroY, 'hero');
+        checkSmash();
     }
     else if (e.keyCode == '40' && heroY < 450) {
         // down arrow
         heroY += 100;
-        checkSmash();
         hero.destroy();
         hero = game.add.sprite(heroX, heroY, 'hero');
+        checkSmash();
     } else if (e.keyCode == '37' && heroX > 150) { //left
         heroX -= 120;
-        checkSmash();
         hero.destroy();
         hero = game.add.sprite(heroX, heroY, 'hero');
+        checkSmash();
     } else if (e.keyCode == '39' && heroX < 630) { //right
         heroX += 120;
-        checkSmash();
         hero.destroy();
         hero = game.add.sprite(heroX, heroY, 'hero');
+        checkSmash();
     }
 }
 
