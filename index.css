@@ -1,11 +1,32 @@
-body {
-	text-align: center;
+h1 {
+	background-image: url("paper.gif");
+    color: #0000B2;
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 40px; 
 }
 
-div {
-	border: 5px white;
-	width: 900px;
-	margin-left: auto;
-	margin-right: auto;
+body {
+	background-color: #EBF5FF; 
+	text-align: center;
+	border: 10px white; 
 }
+
+div#game {
+	border: 25px solid black; 
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto ;
+}
+
+p {
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+
+
 

@@ -1,5 +1,5 @@
 
-
+var playerName = null;
 function playerJoin(player){
 	$.get("disServer.php?player="+player+"&join=T",function( data ) {
 	});
@@ -47,9 +47,14 @@ window.onload = function() {
     if (window.jQuery) {  
         // jQuery is loaded  
         //alert("Yeah!");
+        playerName = window.prompt("Please enter your name","Disaster Command");
+        playerJoin(playerName);
         var updateTimer = window.setInterval(update, 2000);
     } else {
         // jQuery is not loaded
         alert("Doesn't Work");
     }
 }
+window.onbeforeunload = function (e) {
+  playerLeave(playerName);
+};
