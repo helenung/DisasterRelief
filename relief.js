@@ -36,7 +36,7 @@ function create() {
 function miniGame(background, minigame) {
 	thisBg = game.add.sprite(0, 0, background);
 	backButton = game.add.sprite(800, 525, 'back');
-	beginButton = game.add.sprite(350, 225, 'begin');
+	beginButton = game.add.sprite(350, 400, 'begin');
 	backButton.inputEnabled = true;
 	backButton.events.onInputUp.add(function() {
 		endGame(thisBg);
