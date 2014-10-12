@@ -67,6 +67,16 @@ var hero, heroX, heroY;
 var tiles;
 var victim;
 
+// function buildBoulders() {
+// 	for (var i = 0; i < 20; i++) {
+// 		var randomX = Math.floor(Math.random() * 5);
+// 		var randomY = Math.floor(Math.random() * 5);
+// 		if (tiles[randomX][randomY] == null) {
+// 			tiles[randomX][randomY] = game.add.sprite(150 + (120 *randomX), 50 + (randomY * 100), 'debris' );
+// 		}
+// 	}
+// }
+
 function startRescue() {
 	document.onkeydown = checkKey;
 	beginButton.destroy();
@@ -77,6 +87,8 @@ function startRescue() {
 	for (var i = 1; i <= 5; i++) {
 		tiles[i] = [0,1,2,3,4];
 	}
+
+	//buildBoulders();
 
 	tiles[0][1] = game.add.sprite(150 + 0 * 120, 50 + 1 * 100, 'debris');
 	tiles[0][2] = game.add.sprite(150 + 0 * 120, 50 + 2 * 100, 'debris');
