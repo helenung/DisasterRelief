@@ -60,33 +60,8 @@ function startRope() {
 }
 
 var hero, heroX, heroY;
-
-
-function checkKey(e) {
-
-    e = e || window.event;
-
-    if (e.keyCode == '38') {
-        // up arrow
-        heroY -= 100;
-        hero.destroy();
-        hero = game.add.sprite(heroX, heroY, 'hero');
-    }
-    else if (e.keyCode == '40') {
-        // down arrow
-        heroY += 100;
-        hero.destroy();
-        hero = game.add.sprite(heroX, heroY, 'hero');
-    } else if (e.keyCode == '37') {
-        heroX -= 120;
-        hero.destroy();
-        hero = game.add.sprite(heroX, heroY, 'hero');
-    } else if (e.keyCode == '39') {
-        heroX += 120;
-        hero.destroy();
-        hero = game.add.sprite(heroX, heroY, 'hero');
-    }
- }
+var tiles;
+var victim;
 
 function startRescue() {
 	document.onkeydown = checkKey;
@@ -94,7 +69,7 @@ function startRescue() {
 	backButton.destroy();
 	boulderTiles = game.add.sprite(150, 50, 'boulderTiles');
 	var rescued = true;
-	var tiles = [0,1,2,3,4];
+	tiles = [0,1,2,3,4];
 	for (var i = 1; i <= 5; i++) {
 		tiles[i] = [0,1,2,3,4];
 	}
@@ -115,7 +90,49 @@ function startRescue() {
 	heroX = 150;
 	heroY = 450;
 	hero = game.add.sprite(150, 450, 'hero');
-	var victim = game.add.sprite(630, 50, 'victim');
+	victim = game.add.sprite(630, 50, 'victim');
+}
+
+
+function checkSmash() {
+    // if (tiles[(heroX - 150) / 120][(heroY - 50) / 100]) {
+    // 	tiles[(heroX - 150) / 120][(heroY - 50) / 100].destroy();
+    // 	tiles[(heroX - 150) / 120][(heroY - 50) / 100] = games.add.sprite(heroX, heroY, 'debrisSmash');
+    // }
+
+    if (heroX == 630 && heroY == 50) {
+    	victim.destroy();
+    	scoreUp(playerName, 1);
+    }
+}
+
+function checkKey(e) {
+    e = e || window.event;
+
+    if (e.keyCode == '38' && heroY >= 100) {
+        // up arrow
+        heroY -= 100;
+        checkSmash();
+        hero.destroy();
+        hero = game.add.sprite(heroX, heroY, 'hero');
+    }
+    else if (e.keyCode == '40' && heroY < 450) {
+        // down arrow
+        heroY += 100;
+        checkSmash();
+        hero.destroy();
+        hero = game.add.sprite(heroX, heroY, 'hero');
+    } else if (e.keyCode == '37' && heroX > 150) { //left
+        heroX -= 120;
+        checkSmash();
+        hero.destroy();
+        hero = game.add.sprite(heroX, heroY, 'hero');
+    } else if (e.keyCode == '39' && heroX < 630) { //right
+        heroX += 120;
+        checkSmash();
+        hero.destroy();
+        hero = game.add.sprite(heroX, heroY, 'hero');
+    }
 }
 
 function update() {
