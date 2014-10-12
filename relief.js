@@ -59,11 +59,40 @@ function startRope() {
 	backButton.destroy();
 }
 
+var hero, heroX, heroY;
+
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        heroY -= 100;
+        hero.destroy();
+        hero = game.add.sprite(heroX, heroY, 'hero');
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        heroY += 100;
+        hero.destroy();
+        hero = game.add.sprite(heroX, heroY, 'hero');
+    } else if (e.keyCode == '37') {
+        heroX -= 120;
+        hero.destroy();
+        hero = game.add.sprite(heroX, heroY, 'hero');
+    } else if (e.keyCode == '39') {
+        heroX += 120;
+        hero.destroy();
+        hero = game.add.sprite(heroX, heroY, 'hero');
+    }
+ }
+
 function startRescue() {
+	document.onkeydown = checkKey;
 	beginButton.destroy();
 	backButton.destroy();
 	boulderTiles = game.add.sprite(150, 50, 'boulderTiles');
-	var cursors = game.input.keyboard.createCursorKeys();
 	var rescued = true;
 	var tiles = [0,1,2,3,4];
 	for (var i = 1; i <= 5; i++) {
@@ -83,11 +112,11 @@ function startRescue() {
 	tiles[4][2] = game.add.sprite(150 + 4 * 120, 50 + 2 * 100, 'debris');
 	tiles[4][4] = game.add.sprite(150 + 4 * 120, 50 + 4 * 100, 'debris');
 
-	var hero = game.add.sprite(150, 450, 'hero');
+	heroX = 150;
+	heroY = 450;
+	hero = game.add.sprite(150, 450, 'hero');
 	var victim = game.add.sprite(630, 50, 'victim');
-
 }
 
 function update() {
-
 }
