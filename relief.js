@@ -18,11 +18,13 @@ function create() {
 	toRope = game.add.sprite(210, 250, 'toRope');
 	toRope.inputEnabled = true;
 	toRope.events.onInputUp.add(function() {
+		toRope.inputEnabled = false;
 		miniGame('ropeBg', startRope);
 	});
 	toBoulder = game.add.sprite(400, 140, 'toBoulder');
 	toBoulder.inputEnabled = true;
 	toBoulder.events.onInputUp.add(function() {
+		toBoulder.inputEnabled = false;
 		miniGame('boulderBg', startRescue)
 	});
 }
@@ -44,6 +46,8 @@ function endGame(background) {
 	background.destroy();
 	beginButton.destroy();
 	backButton.destroy();
+	toBoulder.inputEnabled = true;
+	toRope.inputEnabled = true;
 }
 
 function startRope() {
@@ -54,7 +58,7 @@ function startRope() {
 function startRescue() {
 	beginButton.destroy();
 	backButton.destroy();
-	boulderTiles = game.add.sprite(150, 0, 'boulderTiles');
+	boulderTiles = game.add.sprite(150, 50, 'boulderTiles');
 	var rescued = true;
 	var boulders = [0,1,2,3,4];
 	for (var i = 1; i <= 5; i++) {
