@@ -10,6 +10,7 @@ function preload() {
 	game.load.image('begin', 'begin_button.png')
 	game.load.image('boulderBg', 'boulder_bg.png');
 	game.load.image('toBoulder', 'boulder_button.png');
+	game.load.image('toCrash', 'crash_button.png');
 	game.load.image('boulderTiles', 'tiles.png');
 	game.load.image('debris', 'boulder.png');
 	game.load.image('debrisSmash', 'crushed.png');
@@ -33,6 +34,7 @@ function create() {
 		toBoulder.inputEnabled = false;
 		miniGame('boulderBg', startRescue)
 	});
+	toCrash = game.add.sprite(640, 260, 'toCrash');
 }
 
 function miniGame(background, minigame) {
