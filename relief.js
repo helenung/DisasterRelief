@@ -63,23 +63,26 @@ function startRescue() {
 	beginButton.destroy();
 	backButton.destroy();
 	boulderTiles = game.add.sprite(150, 50, 'boulderTiles');
+	var cursors = game.input.keyboard.createCursorKeys();
 	var rescued = true;
 	var tiles = [0,1,2,3,4];
 	for (var i = 1; i <= 5; i++) {
 		tiles[i] = [0,1,2,3,4];
 	}
 
-	// for (var i = 0; i < 5; i++) { // row
-	// 	for (var j = 0; j < 5; j++) { // column
-	// 		tiles[i][j] = game.add.sprite(150 + (i*120), 50 + (j*100), 'debris');
-	// 	}
-	// }
+	tiles[0][1] = game.add.sprite(150 + 0 * 120, 50 + 1 * 100, 'debris');
+	tiles[0][2] = game.add.sprite(150 + 0 * 120, 50 + 2 * 100, 'debris');
+	tiles[0][3] = game.add.sprite(150 + 0 * 120, 50 + 3 * 100, 'debris');
+	tiles[1][2] = game.add.sprite(150 + 1 * 120, 50 + 2 * 100, 'debris');
+	tiles[1][4] = game.add.sprite(150 + 1 * 120, 50 + 4 * 100, 'debris');
+	tiles[2][0] = game.add.sprite(150 + 2 * 120, 50 + 0 * 100, 'debris');
+	tiles[2][1] = game.add.sprite(150 + 2 * 120, 50 + 1 * 100, 'debris');
+	tiles[2][3] = game.add.sprite(150 + 2 * 120, 50 + 3 * 100, 'debris');
+	tiles[3][1] = game.add.sprite(150 + 3 * 120, 50 + 1 * 100, 'debris');
+	tiles[3][3] = game.add.sprite(150 + 3 * 120, 50 + 3 * 100, 'debris');
+	tiles[4][2] = game.add.sprite(150 + 4 * 120, 50 + 2 * 100, 'debris');
+	tiles[4][4] = game.add.sprite(150 + 4 * 120, 50 + 4 * 100, 'debris');
 
-	// tiles[3][2].destroy();
-	// tiles[3][2] = game.add.sprite(510, 250, 'debrisSmash');
-	// tiles[0][0] = game.add.sprite(150, 0, 'debris');
-	// tiles[2][0] = game.add.sprite(280, 0, 'debris');
-	// tiles[4][0] = game.add.sprite(410, 0, 'debris');
 	var hero = game.add.sprite(150, 450, 'hero');
 	var victim = game.add.sprite(630, 50, 'victim');
 
