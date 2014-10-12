@@ -4,6 +4,8 @@ function preload() {
 	game.load.image('bg', 'bg.png');
 	game.load.image('toRope', 'rope_button.png');
 	game.load.image('ropeBg', 'rope_bg.png');
+	game.load.image('ropeBg2', 'rope_bg2.png');
+	game.load.image('rope', 'rope.png');
 	game.load.image('back', 'back_button.png');
 	game.load.image('begin', 'begin_button.png')
 	game.load.image('boulderBg', 'boulder_bg.png');
@@ -48,15 +50,17 @@ function miniGame(background, minigame) {
 
 function endGame(background) {
 	background.destroy();
-	beginButton.destroy();
 	backButton.destroy();
+	beginButton.destroy();
 	toBoulder.inputEnabled = true;
 	toRope.inputEnabled = true;
 }
 
 function startRope() {
+	game.add.sprite(0, 0, 'ropeBg2');
 	beginButton.destroy();
 	backButton.destroy();
+	game.add.sprite(0, 250, 'rope');
 }
 
 var hero, heroX, heroY;
