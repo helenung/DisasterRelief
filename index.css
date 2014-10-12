@@ -2,8 +2,14 @@ h1 {
 	background-image: url("paper.gif");
     color: #0000B2;
     text-align: center;
-    font-family: "Times New Roman";
-    font-size: 40px; 
+	font-family: 'Black Ops One', cursive;
+    font-size: 50px; 
+}
+
+p{
+    text-align: middle;
+	font-family: 'Inconsolata', ;
+    font-size: 20px; 
 }
 
 body {
