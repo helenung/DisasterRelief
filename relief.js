@@ -61,14 +61,14 @@ function startRescue() {
 		boulders[i] = [0,1,2,3,4];
 	}
 
-	for (var i = 0; i < 5; i++) {
-		for (var j = 0; j < 5; j++) {
-			boulders[i][j] = game.add.sprite(150 + (i*120), 50 + (j*100), 'debris');
-		}
-	}
+	// for (var i = 0; i < 5; i++) {
+	// 	for (var j = 0; j < 5; j++) {
+	// 		boulders[i][j] = game.add.sprite(150 + (i*120), 50 + (j*100), 'debris');
+	// 	}
+	// }
 
-	boulders[3][2].destroy();
-	boulders[3][2] = game.add.sprite(510, 250, 'debrisSmash');
+	// boulders[3][2].destroy();
+	// boulders[3][2] = game.add.sprite(510, 250, 'debrisSmash');
 	// boulders[0][0] = game.add.sprite(150, 0, 'debris');
 	// boulders[2][0] = game.add.sprite(280, 0, 'debris');
 	// boulders[4][0] = game.add.sprite(410, 0, 'debris');
