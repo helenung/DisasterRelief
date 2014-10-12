@@ -9,7 +9,7 @@ function preload() {
 	game.load.image('boulderBg', 'boulder_bg.png');
 	game.load.image('toBoulder', 'boulder_button.png');
 	game.load.image('boulderTiles', 'tiles.png');
-	game.load.image('debris', 'debris.png');
+	game.load.image('debris', 'boulder.png');
 	game.load.image('debrisSmash', 'debrisSmash.png');
 }
 
@@ -19,11 +19,13 @@ function create() {
 	toRope.inputEnabled = true;
 	toRope.events.onInputUp.add(function() {
 		toRope.inputEnabled = false;
+		toBoulder.inputEnabled = false;
 		miniGame('ropeBg', startRope);
 	});
 	toBoulder = game.add.sprite(400, 140, 'toBoulder');
 	toBoulder.inputEnabled = true;
 	toBoulder.events.onInputUp.add(function() {
+		toRope.inputEnabled = false;
 		toBoulder.inputEnabled = false;
 		miniGame('boulderBg', startRescue)
 	});
