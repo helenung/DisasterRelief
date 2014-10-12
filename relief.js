@@ -118,6 +118,7 @@ function checkSmash() {
     	scoreUp(playerName, 1);
     }
 
+    console.log("[" + (heroX - 150) / 120 + "][" + (heroY - 50) / 100);
      if (tiles[(heroX - 150) / 120][(heroY - 50) / 100]) {
      	tiles[(heroX - 150) / 120][(heroY - 50) / 100].destroy();
      	tiles[(heroX - 150) / 120][(heroY - 50) / 100] = game.add.sprite(heroX, heroY, 'debrisSmash');
