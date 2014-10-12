@@ -68,13 +68,26 @@ var tiles;
 var victim;
 
 // function buildBoulders() {
-// 	for (var i = 0; i < 20; i++) {
-// 		var randomX = Math.floor(Math.random() * 5);
-// 		var randomY = Math.floor(Math.random() * 5);
-// 		if (tiles[randomX][randomY] == null) {
-// 			tiles[randomX][randomY] = game.add.sprite(150 + (120 *randomX), 50 + (randomY * 100), 'debris' );
+// 	for (var i = 0; i < 5; i++) {
+// 		for (var j = 0; j < 5; j++) {
+// 			if (tile[i][j]) {
+// 				tile[i][j].destroy();
+// 			}
 // 		}
 // 	}
+
+// 	tiles[0][1] = game.add.sprite(150 + 0 * 120, 50 + 1 * 100, 'debris');
+// 	tiles[0][2] = game.add.sprite(150 + 0 * 120, 50 + 2 * 100, 'debris');
+// 	tiles[0][3] = game.add.sprite(150 + 0 * 120, 50 + 3 * 100, 'debris');
+// 	tiles[1][2] = game.add.sprite(150 + 1 * 120, 50 + 2 * 100, 'debris');
+// 	tiles[1][4] = game.add.sprite(150 + 1 * 120, 50 + 4 * 100, 'debris');
+// 	tiles[2][0] = game.add.sprite(150 + 2 * 120, 50 + 0 * 100, 'debris');
+// 	tiles[2][1] = game.add.sprite(150 + 2 * 120, 50 + 1 * 100, 'debris');
+// 	tiles[2][3] = game.add.sprite(150 + 2 * 120, 50 + 3 * 100, 'debris');
+// 	tiles[3][1] = game.add.sprite(150 + 3 * 120, 50 + 1 * 100, 'debris');
+// 	tiles[3][3] = game.add.sprite(150 + 3 * 120, 50 + 3 * 100, 'debris');
+// 	tiles[4][2] = game.add.sprite(150 + 4 * 120, 50 + 2 * 100, 'debris');
+// 	tiles[4][4] = game.add.sprite(150 + 4 * 120, 50 + 4 * 100, 'debris');
 // }
 
 function startRescue() {
@@ -126,6 +139,18 @@ function checkSmash() {
 
     if (heroX == 150 && heroY == 450) {
     	victim = game.add.sprite(630, 50, 'victim');
+    	tiles[0][1] = game.add.sprite(150 + 0 * 120, 50 + 1 * 100, 'debris');
+		tiles[0][2] = game.add.sprite(150 + 0 * 120, 50 + 2 * 100, 'debris');
+		tiles[0][3] = game.add.sprite(150 + 0 * 120, 50 + 3 * 100, 'debris');
+		tiles[1][2] = game.add.sprite(150 + 1 * 120, 50 + 2 * 100, 'debris');
+		tiles[1][4] = game.add.sprite(150 + 1 * 120, 50 + 4 * 100, 'debris');
+		tiles[2][0] = game.add.sprite(150 + 2 * 120, 50 + 0 * 100, 'debris');
+		tiles[2][1] = game.add.sprite(150 + 2 * 120, 50 + 1 * 100, 'debris');
+		tiles[2][3] = game.add.sprite(150 + 2 * 120, 50 + 3 * 100, 'debris');
+		tiles[3][1] = game.add.sprite(150 + 3 * 120, 50 + 1 * 100, 'debris');
+		tiles[3][3] = game.add.sprite(150 + 3 * 120, 50 + 3 * 100, 'debris');
+		tiles[4][2] = game.add.sprite(150 + 4 * 120, 50 + 2 * 100, 'debris');
+		tiles[4][4] = game.add.sprite(150 + 4 * 120, 50 + 4 * 100, 'debris');
     }
 }
 
