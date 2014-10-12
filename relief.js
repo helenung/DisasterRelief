@@ -11,6 +11,8 @@ function preload() {
 	game.load.image('boulderTiles', 'tiles.png');
 	game.load.image('debris', 'boulder.png');
 	game.load.image('debrisSmash', 'debrisSmash.png');
+	game.load.image('hero', 'hero.png');
+	game.load.image('victim', 'victim.png');
 }
 
 function create() {
@@ -62,23 +64,24 @@ function startRescue() {
 	backButton.destroy();
 	boulderTiles = game.add.sprite(150, 50, 'boulderTiles');
 	var rescued = true;
-	var boulders = [0,1,2,3,4];
+	var tiles = [0,1,2,3,4];
 	for (var i = 1; i <= 5; i++) {
-		boulders[i] = [0,1,2,3,4];
+		tiles[i] = [0,1,2,3,4];
 	}
 
-	// for (var i = 0; i < 5; i++) {
-	// 	for (var j = 0; j < 5; j++) {
-	// 		boulders[i][j] = game.add.sprite(150 + (i*120), 50 + (j*100), 'debris');
+	// for (var i = 0; i < 5; i++) { // row
+	// 	for (var j = 0; j < 5; j++) { // column
+	// 		tiles[i][j] = game.add.sprite(150 + (i*120), 50 + (j*100), 'debris');
 	// 	}
 	// }
 
-	// boulders[3][2].destroy();
-	// boulders[3][2] = game.add.sprite(510, 250, 'debrisSmash');
-	// boulders[0][0] = game.add.sprite(150, 0, 'debris');
-	// boulders[2][0] = game.add.sprite(280, 0, 'debris');
-	// boulders[4][0] = game.add.sprite(410, 0, 'debris');
-
+	// tiles[3][2].destroy();
+	// tiles[3][2] = game.add.sprite(510, 250, 'debrisSmash');
+	// tiles[0][0] = game.add.sprite(150, 0, 'debris');
+	// tiles[2][0] = game.add.sprite(280, 0, 'debris');
+	// tiles[4][0] = game.add.sprite(410, 0, 'debris');
+	var hero = game.add.sprite(150, 450, 'hero');
+	var victim = game.add.sprite(630, 50, 'victim');
 
 }
 
