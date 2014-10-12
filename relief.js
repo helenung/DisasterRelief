@@ -10,7 +10,7 @@ function preload() {
 	game.load.image('toBoulder', 'boulder_button.png');
 	game.load.image('boulderTiles', 'tiles.png');
 	game.load.image('debris', 'boulder.png');
-	game.load.image('debrisSmash', 'debrisSmash.png');
+	game.load.image('debrisSmash', 'crushed.png');
 	game.load.image('hero', 'hero.png');
 	game.load.image('victim', 'victim.png');
 }
