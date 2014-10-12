@@ -15,9 +15,9 @@ function scoreUp(player, score){
 	});
 }
 
-function update(){
+function updateS(){
 
-//	console.log("update");
+	console.log("update");
 	$.getJSON( "disServer.php?update=t",function( data ) {
 //console.log("update2");
 
@@ -49,7 +49,7 @@ window.onload = function() {
         //alert("Yeah!");
         playerName = window.prompt("Please enter your name","Disaster Command");
         playerJoin(playerName);
-        var updateTimer = window.setInterval(update, 2000);
+        var updateTimer = window.setInterval(updateS, 2000);
     } else {
         // jQuery is not loaded
         alert("Doesn't Work");
